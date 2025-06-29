@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PRIYAHARSHINI|Portfolio</title>
+    <style>
+      :root {
+        --lavender-light: #f6f0fa;
+        --lavender-dark: #2a2438;
+        --text-light: #3a2c4f;
+        --text-dark: #fefaff;
+        --card-bg: white;
+        --card-bg-dark: #3a324d;
+        --accent: #caa8f5;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #f8f0ff, #e3d6ff);
+        color: var(--text-light);
+        transition: all 0.4s ease;
+      }
+
+      body.dark-mode {
+        background: linear-gradient(135deg, #2a2438, #3e2d58);
+        color: var(--text-dark);
+      }
+
+      header {
+        background: var(--accent);
+        color: white;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      nav a {
+        margin: 0 1rem;
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        color: #ffe8ff;
+      }
+
+      .toggle-mode {
+        background-color: white;
+        color: var(--accent);
+        border: none;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      section {
+        padding: 80px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      h1,
+      h2 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-family: "Segoe UI", cursive;
+      }
+
+      p {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      /* Dreamy Profile */
+      .profile-img {
+        display: block;
+        margin: 30px auto;
+        width: 200px;
+        border-radius: 12px;
+        transform: rotate(-5deg);
+        box-shadow: 0 15px 25px rgba(200, 180, 255, 0.3);
+        transition: transform 0.5s ease;
+      }
+
+      .profile-img:hover {
+        transform: rotate(-2deg) scale(1.03);
+      }
+
+      /* Projects */
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: var(--card-bg);
+        border-radius: 16px;
+        padding: 1rem;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        transition: 0.4s;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .card:hover {
+        box-shadow: 0 12px 30px rgba(180, 140, 255, 0.3);
+        transform: translateY(-5px);
+      }
+
+      .card img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        animation: float 4s ease-in-out infinite;
+      }
+
+      body.dark-mode .card {
+        background: var(--card-bg-dark);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
+      /* Contact Form */
+      .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 14px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: 0.3s;
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+        background: #fff0ff;
+      }
+
+      body.dark-mode .contact-form input,
+      body.dark-mode .contact-form textarea {
+        background: #4b4262;
+        border-color: #888;
+        color: white;
+      }
+
+      .contact-form button {
+        background: var(--accent);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      .contact-form button:hover {
+        background: #b98beb;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: var(--accent);
+        color: white;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div><strong>MyPortfolio</strong></div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#poem">Poems</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+    </header>
+
+    <section id="home">
+      <h1>Welcome to My Portfolio</h1>
+      <h1>PRIYAHARSHINI SR</h1>
+      <p>
+        Hi! I'm a web developer passionate about dreamy, aesthetic, and
+        interactive websites.
+      </p>
+      <img src="D:\summer projects\images\me 3.jpeg" alt="My Photo" class="profile-img" />
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hey there, I'm Priya Harshini<br><br>
+        Frontend Developer | Creative Thinker | Web Enthusiast<br><br>
+        I'm a passionate engineering student with a strong love for web development and creative design. With hands-on experience in HTML, CSS, JavaScript, and animations, I enjoy turning ideas into visually stunning and interactive websites. Whether it's crafting smooth transitions or building responsive layouts, I love bringing imagination to life on the web.<br><br>
+        Currently exploring the world of AI, outfit generators, and aesthetic UI/UX, I’m always curious to learn new things and build projects that stand out. I believe in continuous growth, meaningful design, and leaving a touch of personality in everything I create.<br><br>
+        When I’m not coding, you’ll find me vibing to music, dreaming up creative ideas, or working on side projects that make me smile. Let's build something awesome together! 💻✨
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="card">
+  <img
+    src="https://i.pinimg.com/736x/ca/30/5f/ca305f1142dc9efd278ff3388be96f63.jpg"
+    alt="bouncing Ball Project"
+  />
+  <h3>bouncing ball</h3>
+  <p>where ball bounce and tells about me</p>
+  <a href="https://github.com/priyaharshiniSR/ball-bounce"
+     target="_blank" 
+     style="display:inline-block; margin-top:10px; color: var(--accent); font-weight: bold;">
+    🔗 GitHub
+  </a>
+</div>
+
+<div class="card">
+  <img
+    src="https://i.pinimg.com/736x/0c/cc/0a/0ccc0ad61d6a1b18f7d53e636ba0979c.jpg"
+    alt="netflix Project"
+  /> 
+  <h3>Netflix Website</h3>
+  <p>Landing page of Netflix and Chill </p>
+  <a href="https://github.com/priyaharshiniSR/netflixclone"
+     target="_blank" 
+     style="display:inline-block; margin-top:10px; color: var(--accent); font-weight: bold;">
+    🔗 GitHub
+  </a>
+</div>
+
+<div class="card">
+  <img
+    src="https://i.pinimg.com/736x/fa/23/ef/fa23ef06b595d7efd79bd77981be2de0.jpg"
+    alt="Chumbi valley"
+  />
+  <h3>Landing Page</h3>
+  <p>light mode landing page with scroll animations 📺✨</p>
+  <a href="https://github.com/priyaharshiniSR/chumbivalley-game-landing-page"
+     target="_blank" 
+     style="display:inline-block; margin-top:10px; color: var(--accent); font-weight: bold;">
+    🔗 GitHub
+  </a>
+</div>
+
+
+
+<div class="card">
+  <img
+    src="https://i.pinimg.com/736x/4c/b6/65/4cb6652266b3460d09d2da930f1000ce.jpg"
+    alt="Rock paper game"
+  />
+  <h3>PYTHON ROCK PAPER GAME</h3>
+  <p>play rock paper game and see who wins 📺✨</p>
+  <a href="https://github.com/priyaharshiniSR/python"
+     target="_blank" 
+     style="display:inline-block; margin-top:10px; color: var(--accent); font-weight: bold;">
+    🔗 GitHub
+  </a>
+</div>
+
+
+<div class="card">
+  <img
+    src="https://i.pinimg.com/736x/7a/fc/21/7afc21c200e920562e2d22d3a2a2eeca.jpg"
+    alt="PY Calculator"
+  />
+  <h3>PYTHON CALCULATOR</h3>
+  <p>Calculate the calculations and be smart✨</p>
+  <a href="https://github.com/priyaharshiniSR/python"
+     target="_blank" 
+     style="display:inline-block; margin-top:10px; color: var(--accent); font-weight: bold;">
+    🔗 GitHub
+  </a>
+</div>
+
+
+
+
+<div class="card">
+  <img
+    src="https://i.pinimg.com/736x/18/49/e1/1849e1531e29aaec27d641f21a4f399a.jpg"
+    alt="TO DO LIST"
+  />
+  <h3>PYTHON TO DO LIST</h3>
+  <p>always stay remind with to do list📺✨</p>
+  <a href="https://github.com/priyaharshiniSR/python"
+     target="_blank" 
+     style="display:inline-block; margin-top:10px; color: var(--accent); font-weight: bold;">
+    🔗 GitHub
+  </a>
+</div>
+
+      </div>
+    </section>
+ <section id="poem">
+      <h2 style="text-align: center; font-family: 'Segoe UI', cursive; margin-bottom: 20px;">JUST ME</h2>
+      <div style="
+        max-width: 700px;
+        margin: 0 auto;
+        background: rgba(255, 240, 255, 0.5);
+        border-radius: 20px;
+        padding: 30px 20px;
+        box-shadow: 0 4px 20px rgba(180, 150, 255, 0.2);
+        font-family: 'Georgia', cursive;
+        line-height: 1.8;
+        color: #5c4a72;
+        text-align: center;
+      ">
+        <pre>
+         Just Me
+I'm a spark in quiet skies,
+A dreamer with wide-open eyes.
+I laugh, I love, I sometimes cry,
+But always rise and reach up high.
+
+A heart that’s deep, a soul that’s true,
+A little wild, yet gentle too.
+Not here to follow, but to be—
+The one and only, simply me.
+        </pre>
+      </div>
+    </section>
+
+    <section id="poem">
+      <h2 style="text-align: center; font-family: 'Segoe UI', cursive; margin-bottom: 20px;">BORN TO</h2>
+      <div style="
+        max-width: 700px;
+        margin: 0 auto;
+        background: rgba(255, 240, 255, 0.5);
+        border-radius: 20px;
+        padding: 30px 20px;
+        box-shadow: 0 4px 20px rgba(180, 150, 255, 0.2);
+        font-family: 'Georgia', cursive;
+        line-height: 1.8;
+        color: #5c4a72;
+        text-align: center;
+      ">
+       <pre>
+       Born to Design
+Give me colors, curves, and flair,
+I’ll turn a mess to something rare!
+Fonts and borders, bold and fine—
+Oh darling, this chaos? Totally mine.
+
+From doodles wild to sleek design,
+Creating magic? That joy is mine!
+       </pre>
+      </div>
+    </section>
+
+    <section id="poem">
+      <h2 style="text-align: center; font-family: 'Segoe UI', cursive; margin-bottom: 20px;">HARSHINI</h2>
+      <div style="
+        max-width: 700px;
+        margin: 0 auto;
+        background: rgba(255, 240, 255, 0.5);
+        border-radius: 20px;
+        padding: 30px 20px;
+        box-shadow: 0 4px 20px rgba(180, 150, 255, 0.2);
+        font-family: 'Georgia', cursive;
+        line-height: 1.8;
+        color: #5c4a72;
+        text-align: center;
+      ">
+       <pre>
+      Harshini the Dream Designer
+With a spark in her eye and a style so fine,
+She dances through pixels and makes them shine.
+Colors obey her, shapes align,
+She’s not just a girl—she’s a design divine!
+
+Ideas bloom wherever she goes,
+She turns plain pages into prose.
+With every click and every line,
+Harshini creates—it’s by design!
+       </pre>
+      </div>
+    </section>
+
+ <section id="poem">
+      <h2 style="text-align: center; font-family: 'Segoe UI', cursive; margin-bottom: 20px;">CONTACT ME </h2>
+      <div style="
+        max-width: 700px;
+        margin: 0 auto;
+        background: rgba(255, 240, 255, 0.5);
+        border-radius: 20px;
+        padding: 30px 20px;
+        box-shadow: 0 4px 20px rgba(180, 150, 255, 0.2);
+        font-family: 'Georgia', cursive;
+        line-height: 1.8;
+        color: #5c4a72;
+        text-align: center;
+      ">
+       <pre>
+
+        MAIL : priyaharshinisr@gmail.com
+        INSTA : priyaa_harshinii
+       </pre>
+      </div>
+    </section>
+   
+
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <div class="contact-form">
+        <form action="#">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>&copy; 2025 With 💜 & Code | Made by Me</footer>
+
+    <script>
+      function toggleMode() {
+        document.body.classList.toggle("dark-mode");
+        document.querySelector(".toggle-mode").textContent =
+          document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+      }
+    </script>
+  </body>
+</html>
